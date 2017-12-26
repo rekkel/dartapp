@@ -16,24 +16,42 @@
     data() {
       return {
         values: [
-          '1','2','3','4','5','6','7','8','9','del','0','ok'
+          'reset','1','2','3','4','5','6','7','8','9','del','0','ok'
         ],
         inputvalue: ''
       }
     },
     methods: {
       add(val) {
-        if(val == 'del') {
+        if (val == 'del') {
           this.inputvalue = ''
+        } else if (val == 'reset') {
+          store.state.player1.value = 501
+          store.state.player2.value = 501
+          store.state.beurt = 1
         } else if(val == 'ok') {
           if (store.state.beurt == 1) {
-            store.state.player1.value -= parseInt(this.inputvalue)
-            store.state.beurt = 2
-            this.inputvalue = ''
+            if (store.state.player1.value - parseInt(this.inputvalue) > 0 && store.state.player1.value - parseInt(this.inputvalue) != 1) {
+              store.state.player1.value -= parseInt(this.inputvalue)
+              store.state.beurt = 2
+              this.inputvalue = ''
+            } else if (store.state.player1.value - parseInt(this.inputvalue) == 0) {
+              store.state.player1.value -= parseInt(this.inputvalue)
+              // store.state.beurt = 2
+              this.inputvalue = ''
+              alert(store.state.player1.name + ' heeft gewonnen!')
+            }
           } else if (store.state.beurt == 2) {
-            store.state.player2.value -= parseInt(this.inputvalue)
-            store.state.beurt = 1
-            this.inputvalue = ''
+            if (store.state.player2.value - parseInt(this.inputvalue) > 0 && store.state.player2.value - parseInt(this.inputvalue) != 1) {
+              store.state.player2.value -= parseInt(this.inputvalue)
+              store.state.beurt = 1
+              this.inputvalue = ''
+            } else if (store.state.player2.value - parseInt(this.inputvalue) == 0) {
+              store.state.player2.value -= parseInt(this.inputvalue)
+              // store.state.beurt = 2
+              this.inputvalue = ''
+              alert(store.state.player2.name + ' heeft gewonnen!')
+            }
           }
         } else if (parseInt(this.inputvalue + val) <= 180) {
           this.inputvalue += val
@@ -45,7 +63,7 @@
 
 <style>
   .valueinput {
-    width:100%;
+    width:66.6666%;
     height:12vh;
     float:left;
     background: #ddd;

@@ -4,7 +4,7 @@
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-    <b-navbar-brand href="#">Darts App</b-navbar-brand>
+    <b-navbar-brand :to="{ path: '/' }">Darts App</b-navbar-brand>
 
     <b-collapse is-nav id="nav_collapse">
 
@@ -15,7 +15,7 @@
 
         <b-nav-item-dropdown text="501" right>
           <b-dropdown-item href="#">1 Speler</b-dropdown-item>
-          <b-dropdown-item><router-link to="/vijf2">2 Spelers</router-link></b-dropdown-item>
+          <b-dropdown-item :to="{ path: '/vijf2' }">2 Spelers</b-dropdown-item>
           <b-dropdown-item href="#">3 Spelers</b-dropdown-item>
           <b-dropdown-item href="#">4 Spelers</b-dropdown-item>
         </b-nav-item-dropdown>
@@ -46,5 +46,11 @@ export default {
 <style>
 .navbar {
   height:4vh;
+  z-index: 999;
+}
+
+.navbar-collapse {
+  z-index: 9999;
+  opacity: 1;
 }
 </style>

@@ -30,6 +30,7 @@ export default {
     width:50%;
     padding:20px;
     height:36vh;
+    z-index: 0;
   }
 
   .left-pane {
@@ -47,7 +48,7 @@ export default {
   }
 
   .score {
-    font-size: 150px;
+    font-size: 10vh;
   }
 
   .turn {
