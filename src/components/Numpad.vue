@@ -26,9 +26,7 @@
         if (val == 'del') {
           this.inputvalue = ''
         } else if (val == 'reset') {
-          store.state.player1.value = 501
-          store.state.player2.value = 501
-          store.state.beurt = 1
+          this.resetBoard()
         } else if(val == 'ok') {
           if (store.state.beurt == 1) {
             if (store.state.player1.value - parseInt(this.inputvalue) > 0 && store.state.player1.value - parseInt(this.inputvalue) != 1) {
@@ -36,9 +34,7 @@
               store.state.beurt = 2
               this.inputvalue = ''
             } else if (store.state.player1.value - parseInt(this.inputvalue) == 0) {
-              store.state.player1.value -= parseInt(this.inputvalue)
-              // store.state.beurt = 2
-              this.inputvalue = ''
+              this.resetBoard()
               alert(store.state.player1.name + ' heeft gewonnen!')
             }
           } else if (store.state.beurt == 2) {
@@ -47,15 +43,19 @@
               store.state.beurt = 1
               this.inputvalue = ''
             } else if (store.state.player2.value - parseInt(this.inputvalue) == 0) {
-              store.state.player2.value -= parseInt(this.inputvalue)
-              // store.state.beurt = 2
-              this.inputvalue = ''
+              this.resetBoard()
               alert(store.state.player2.name + ' heeft gewonnen!')
             }
           }
         } else if (parseInt(this.inputvalue + val) <= 180) {
           this.inputvalue += val
         }
+      },
+      resetBoard() {
+        store.state.player1.value = 501
+        store.state.player2.value = 501
+        store.state.beurt = 1
+        this.inputvalue = ''
       }
     }
   }
