@@ -15,7 +15,7 @@
 
         <b-nav-item-dropdown text="501" right>
           <b-dropdown-item href="#">1 Speler</b-dropdown-item>
-          <b-dropdown-item href="#">2 Spelers</b-dropdown-item>
+          <b-dropdown-item><router-link to="/vijf2">2 Spelers</router-link></b-dropdown-item>
           <b-dropdown-item href="#">3 Spelers</b-dropdown-item>
           <b-dropdown-item href="#">4 Spelers</b-dropdown-item>
         </b-nav-item-dropdown>
@@ -44,4 +44,7 @@ export default {
 </script>
 
 <style>
+.navbar {
+  height:4vh;
+}
 </style>
