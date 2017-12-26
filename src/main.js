@@ -15,7 +15,7 @@ import vijf2 from './components/vijf2.vue'
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: Home },
+    { path: '/', component: vijf2 },
     { path: '/vijf2', component: vijf2 }
   ]
 })

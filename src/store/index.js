@@ -8,12 +8,18 @@ Vue.use(Vuex)
 const state = {
   beurt: 1,
   player1: {
-    name: 'Rick',
-    value: 501
+    name: '',
+    value: 501,
+    history: [],
+    last: 999,
+    wins: 0
   },
   player2: {
-    name: 'Sem',
-    value: 501
+    name: '',
+    value: 501,
+    history: [],
+    last: 999,
+    wins: 0
   }
 }
 
