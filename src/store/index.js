@@ -20,6 +20,20 @@ const state = {
     history: [],
     last: 999,
     wins: 0
+  },
+  player3: {
+    name: '',
+    value: 501,
+    history: [],
+    last: 999,
+    wins: 0
+  },
+  player4: {
+    name: '',
+    value: 501,
+    history: [],
+    last: 999,
+    wins: 0
   }
 }
 
